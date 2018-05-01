@@ -8,4 +8,10 @@
 
 ## 项目开发我会放到GitHub和码云上，有兴趣的可以关注
 
-## [GitHub]()
+## [GitHub](https://github.com/rainweb521/SendEmail)
+
+## [码云](https://gitee.com/rainweb/sendemail)
+
+## 放一个设想图
+
+![](/public/reade/1.jpg)

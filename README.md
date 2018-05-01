@@ -12,6 +12,6 @@
 
 ## [码云](https://gitee.com/rainweb/sendemail)
 
-## 放一个设想图
+## 放一个设想图 
 
 ![](/public/reade/1.jpg)

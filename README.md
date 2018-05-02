@@ -15,3 +15,4 @@
 ## 放一个设想图 
 
 ![](/public/reade/1.jpg)
+![](/public/reade/2.jpg)

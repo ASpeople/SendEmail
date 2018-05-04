@@ -12,4 +12,8 @@ class Index extends Common {
 
         return \view('key');
     }
+    public function add_key(){
+
+        return \view('add_key');
+    }
 }

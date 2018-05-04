@@ -55,22 +55,21 @@
                 控制台
               </h1>
               <div class="col-auto">
-                <a href="javascript:;" id="about" class="btn btn-outline-primary btn-sm">新增</a>
+                <a href="javascript:;" onclick="iframe()" id="about" class="btn btn-outline-primary btn-sm">新增</a>
               </div>
             </div>
             <script>
-                ;!function(){
-
-
-//页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
-
-
-//关于
-                    $('#about').on('click', function(){
-                        layer.alert(layer.v + ' - 贤心出品 sentsin.com');
+                function iframe(){
+                    //iframe层
+                    layer.open({
+                        type: 2,
+                        title: '欢迎使用留言板',
+                        shadeClose: true,
+                        shade: 0.8,
+                        area: ['480px', '50%'],
+                        content: '/index.php/index/index/add_key' //iframe的url
                     });
-
-                }();
+                }
             </script>
             <div class="row row-cards row-deck" >
               <div class="col-12" >

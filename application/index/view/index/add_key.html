@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="/public/static/layui/css/layui.css" media="all">
+    <script type="text/javascript" src="/public/static/demo/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/static/layui/layui.js"></script>
+</head>
+<body>
+
+
+
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+    <div style="width: 90%;margin: auto;" >
+    <form class="layui-form" action="/index.php?c=index&a=message" method="post">
+        <!--你的邮箱地址-->
+        <input type="hidden" value="1" name="flag">
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择框</label>
+            <div class="layui-input-block">
+                <select name="city" lay-verify="">
+                    <option value="">请选择一个城市</option>
+                    <option value="010">北京</option>
+                    <option value="021">上海</option>
+                    <option value="0571">杭州</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-block">
+                <input type="text" name="email" required  lay-verify="required" placeholder="请输入你的邮箱，或者其他联系方式" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">意见</label>
+            <div class="layui-input-block">
+                <textarea name="message"  placeholder="请输入你的意见或者发现的bug" class="layui-textarea"></textarea>
+
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

@@ -16,7 +16,7 @@ class Common extends Controller {
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
         parent::__construct();
 //        $this->_initialize();
-//        $this->_init();
+        $this->_init();
         $this->assign('title','Send-Email邮件分发系统');
     }
     protected function _initialize(){
@@ -41,15 +41,17 @@ class Common extends Controller {
        //  如果已经登录
         $isLogin = $this->isLogin();
         if (!$isLogin) {
-            $this->assign('User',array('username'=>'0'));
+//            $this->assign('User',array('username'=>'0'));
             // 跳转到登录页面
-//            $this->redirect('/index.php/index/login/index');
+//            return view('/login/login',['state'=>'请先登录']);
+//            exit();
+            $this->redirect('/index.php/index/login/index?state=请先登录');
 //            $url = '/index.php?c=login';
 //            echo "<script language=\"javascript\">";
 //            echo "location.href=\"$url\"";
 //            echo "</script>";
         }else{
-            $this->assign('User',session('User'));
+            $this->assign('AdminUser',session('AdminUser'));
         }
     }
 
@@ -59,7 +61,7 @@ class Common extends Controller {
      */
     public function getLoginUser()
     {
-        return session("User");
+        return session("AdminUser");
     }
 
     /**

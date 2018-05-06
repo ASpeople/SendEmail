@@ -23,45 +23,49 @@
         });
     });
 </script>
-    <div style="width: 90%;margin: auto;" >
-    <form class="layui-form" action="/index.php?c=index&a=message" method="post">
+    <div style="margin: auto;margin-top: 5%;margin-right: 5%;" >
+
+        <div style="color: red" align="center">{$state}</div>
+        <form class="layui-form" action="/index.php/index/index/add_key" method="post">
         <!--你的邮箱地址-->
         <input type="hidden" value="1" name="flag">
         <div class="layui-form-item">
             <label class="layui-form-label">名称</label>
             <div class="layui-input-block">
-                <input type="text" name="username" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                <input type="text" name="note" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
             </div>
         </div>
 
+
         <div class="layui-form-item">
-            <label class="layui-form-label">选择框</label>
+            <label class="layui-form-label">次数</label>
             <div class="layui-input-block">
-                <select name="city" lay-verify="">
-                    <option value="">请选择一个城市</option>
-                    <option value="010">北京</option>
-                    <option value="021">上海</option>
-                    <option value="0571">杭州</option>
+                <select name="number" lay-verify="">
+                    <option value="20">请选择每日使用次数</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">有效期</label>
+            <div class="layui-input-block">
+                <select name="day" lay-verify="">
+                    <option value="30">请选择有效期</option>
+                    <option value="30">30天</option>
+                    <option value="50">50天</option>
+                    <option value="60">60天</option>
                 </select>
             </div>
         </div>
 
-        <div class="layui-form-item">
-            <label class="layui-form-label">邮箱</label>
-            <div class="layui-input-block">
-                <input type="text" name="email" required  lay-verify="required" placeholder="请输入你的邮箱，或者其他联系方式" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">意见</label>
-            <div class="layui-input-block">
-                <textarea name="message"  placeholder="请输入你的意见或者发现的bug" class="layui-textarea"></textarea>
 
-            </div>
-        </div>
+
+
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                <button type="submit" class="layui-btn">立即提交</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>

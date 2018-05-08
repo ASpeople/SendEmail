@@ -83,8 +83,9 @@
                           <th>使用量</th>
                           <th class="text-center">使用率</th>
                           <th class="text-center">今日次数</th>
+                          <th class="text-center">总次数</th>
                           <th class="text-center">有效期</th>
-                          <th>最后一次发送</th>
+                          <th>最近发送</th>
                           <th class="text-center">操作</th>
                         </tr>
                       </thead>
@@ -117,7 +118,10 @@
                             </div>
                           </td>
                           <td class="text-center">
-                            {$line.number}
+                            1/{$line.number}
+                          </td>
+                          <td class="text-center">
+                            1/{$line.number}
                           </td>
                           <td class="text-center">
                             <!--<div class="small text-muted">Last login</div>-->

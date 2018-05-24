@@ -30,6 +30,8 @@ class emailM extends Model{
         emailM::save($data,$where);
     }
     public function insert_Info($data){
+        $user = session('AdminUser');
+        $data['u_id'] = $user['id'];
         emailM::save($data);
     }
     public function get_List($where=null){

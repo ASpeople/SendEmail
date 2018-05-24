@@ -38,4 +38,8 @@ class Index extends Common {
         }
         return \view('add_key',['state'=>$state]);
     }
+    public function api(){
+
+        return \view("api");
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 namespace app\index\controller;
+use app\config\model\emailM;
+use app\config\model\keyM;
 use think\Controller;
 use \think\Request;
 use \think\View;
@@ -11,6 +13,13 @@ class Email extends Common {
     }
     public function email(){
         $tip = Request::instance()->post('tip',0);
+        /** 获取发件箱的邮件数量 */
+        $eamil_model = new emailM();
+        $send_num = count($eamil_model->get_List());
+        /** 获取key的数量 */
+        $key_model = new keyM();
+        $key_list = $key_model->get_List();
+//        var_dump($key_list);exit();
         if ($tip!=0){
             $data['toemail'] = Request::instance()->post('toemail','');
             $data['title'] = Request::instance()->post('title','');
@@ -21,7 +30,7 @@ class Email extends Common {
             $data['ip'] = '1';
             exit();
         }
-        return \view('email');
+        return \view('email',array('send_num'=>$send_num,'key_list'=>$key_list));
     }
     /**
      * 邮件发送

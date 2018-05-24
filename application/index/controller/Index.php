@@ -19,8 +19,8 @@ class Index extends Common {
         $state = '';
         if ($flag!=0){
             $data['note'] = Request::instance()->post('note','');
-            $data['number'] = Request::instance()->post('number',20);
-            $data['day'] = Request::instance()->post('day',30);
+            $data['day_number'] = Request::instance()->post('number',20);
+//            $data['day'] = Request::instance()->post('day',30);
             $user = session('AdminUser');
             $data['code'] = md5($user['id'].$user['username'].$user['email'].date('Y-m-d:h:m:i'));
             $data['u_id'] = $user['id'];
